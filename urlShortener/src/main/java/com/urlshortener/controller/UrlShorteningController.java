@@ -27,6 +27,7 @@ public class UrlShorteningController {
 	@Autowired
 	private UrlService urlService;
 	
+	
 	@PostMapping("/generate")
 	public ResponseEntity<?> generateShortLin(@RequestBody UrlDto urlDto){
 		Url urlToRet = urlService.generateShortLink(urlDto);
@@ -74,7 +75,6 @@ public class UrlShorteningController {
 		response.sendRedirect(urlToRet.getOriginalUrl());
         return null;
 	}
-	
 	
 	
 	
